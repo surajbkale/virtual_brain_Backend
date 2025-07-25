@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import authRoutes from "./routes/auth.routes";
 import contentRoutes from "./routes/content.routes";
+import shareLinkRoutes from "./routes/sharelink.routes";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", contentRoutes);
+app.use("/api/v1", shareLinkRoutes);
 
 interface MainApp {
   (app: express.Express): Promise<void>;
