@@ -1,7 +1,6 @@
 import express from "express";
 import { authMiddleware } from "../middlewares/auth.middleware";
 import { ContentModel } from "../models/content.model";
-import mongoose from "mongoose";
 import { LinkModel } from "../models/link.model";
 import { generateUniqueHash } from "../utils/createhash";
 import { UserModel } from "../models/user.model";
