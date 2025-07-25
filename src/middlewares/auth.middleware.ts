@@ -22,7 +22,7 @@ export const authMiddleware = (
       token,
       process.env.JWT_USER_SECRET as string
     ) as JwtPayload;
-    req.userId = decoded.userId;
+    req.userId = decoded.id;
     next();
   } catch (error) {
     return res.status(403).json({ message: "Invalid or expired token" });
