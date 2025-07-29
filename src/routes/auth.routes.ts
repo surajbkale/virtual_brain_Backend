@@ -23,7 +23,6 @@ router.post("/signup", async (req, res) => {
   });
 
   const parsedData = requiredObj.safeParse(req.body);
-
   if (!parsedData.success) {
     res.status(411).json({
       message: "Invalid inputs",
