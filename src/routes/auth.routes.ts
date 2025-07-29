@@ -11,7 +11,14 @@ router.post("/signup", async (req, res) => {
 
   const requiredObj = z.object({
     name: z.string().min(3).max(20),
-    email: z.string().email().min(3).max(100),
+    email: z
+      .string()
+      .min(3)
+      .max(100)
+      .regex(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "Invalid email format"
+      ),
     password: z
       .string()
       .min(8)
