@@ -9,6 +9,8 @@ import connectDB from "./models/connectDB";
 
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 
 app.use(express.json());
@@ -17,7 +19,7 @@ app.use("/api/v1", authRoutes);
 app.use("/api/v1", contentRoutes);
 app.use("/api/v1", shareLinkRoutes);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   connectDB();
   console.log(`Server is running on port 3000`);
 });
